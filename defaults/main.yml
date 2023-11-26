@@ -1,0 +1,35 @@
+---
+docker_buildx_ver: 0.12.0
+
+docker_buildx_mirror: https://github.com/docker/buildx/releases/download
+
+docker_buildx_arch_map:
+  aarch64: arm64
+  arm64: arm64
+  x86_64: amd64
+
+docker_buildx_persona: sys
+docker_buildx_parent_install_dir:
+  usr: '{{ ansible_env.HOME }}/.docker'
+  sys: /usr/local/lib/docker
+
+docker_buildx_checksums:
+  '0.12.0':
+    # https://github.com/docker/buildx/releases/download/v0.12.0/buildx-v0.12.0.linux-amd64
+    linux-amd64: sha256:7c393b92c148a0ce26c76a2abc99960be1d1097f0471978d41dc51d0c1a4471e
+    # https://github.com/docker/buildx/releases/download/v0.12.0/buildx-v0.12.0.linux-arm-v6
+    linux-arm-v6: sha256:62d9162f526c3bb7f67768a5b0d81a8b3ad0371406dfc1f0775e4f62dfca7fe1
+    # https://github.com/docker/buildx/releases/download/v0.12.0/buildx-v0.12.0.linux-arm-v7
+    linux-arm-v7: sha256:d941d6a5b072de775222d31d9f8467b4c1b1f56e3b08d1b78f828a9244c16464
+    # https://github.com/docker/buildx/releases/download/v0.12.0/buildx-v0.12.0.linux-arm64
+    linux-arm64: sha256:781caebb36551b035cb9dcfaf91088543d09c73c4a2549341e6417d86b8bbb50
+    # https://github.com/docker/buildx/releases/download/v0.12.0/buildx-v0.12.0.linux-ppc64le
+    linux-ppc64le: sha256:ab5bda4532528d6b0801c877999fce9def10c6a37624673fd13c668fdcde16b7
+    # https://github.com/docker/buildx/releases/download/v0.12.0/buildx-v0.12.0.linux-riscv64
+    linux-riscv64: sha256:a2b846919c44128c6db9165ad24545e7e10035b6f0ad01559fcfbb2a13017127
+    # https://github.com/docker/buildx/releases/download/v0.12.0/buildx-v0.12.0.linux-s390x
+    linux-s390x: sha256:81c2ada65624e2ac6bb4123f3a3bb933d04cfb08aa45fc55dd201ba523d96d30
+    # https://github.com/docker/buildx/releases/download/v0.12.0/buildx-v0.12.0.windows-amd64.exe
+    windows-amd64: sha256:dcf01329368381fae8c24b494186a30d2f1c4adb4bef7a0410b4803e5bb1c352
+    # https://github.com/docker/buildx/releases/download/v0.12.0/buildx-v0.12.0.windows-arm64.exe
+    windows-arm64: sha256:3ace30ecc39b214f80d92c7750c5fc51510ca0eee234aa015d89929c531a22d3

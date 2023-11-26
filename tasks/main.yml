@@ -1,0 +1,25 @@
+---
+- name: mkdir {{ docker_buildx_eff_install_dir }}
+  become: true
+  become_user: root
+  file:
+    path: '{{ docker_buildx_eff_install_dir }}'
+    state: directory
+    mode: 0755
+
+- name: downloading {{ docker_buildx_url }} to {{ docker_buildx_install_fq_exe }}
+  become: true
+  become_user: root
+  get_url:
+    url: '{{ docker_buildx_url }}'
+    dest: '{{ docker_buildx_install_fq_exe }}'
+    checksum: '{{ docker_buildx_checksum }}'
+    mode: 0755
+
+- name: linking {{ docker_buildx_install_fq_link }} to {{ docker_buildx_install_fq_exe }}
+  become: true
+  become_user: root
+  file:
+    src: '{{ docker_buildx_install_fq_exe }}'
+    dest: '{{ docker_buildx_install_fq_link }}'
+    state: link

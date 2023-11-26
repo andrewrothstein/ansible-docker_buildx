@@ -1,0 +1,12 @@
+---
+docker_buildx_os: '{{ ansible_system | lower }}'
+docker_buildx_arch: '{{ docker_buildx_arch_map[ansible_architecture] }}'
+
+docker_buildx_platform: '{{ docker_buildx_os }}-{{ docker_buildx_arch }}'
+docker_buildx_exe: 'buildx-v{{ docker_buildx_ver }}.{{ docker_buildx_platform }}{{ docker_buildx_dotexe | default("") }}'
+docker_buildx_url: '{{ docker_buildx_mirror }}/v{{ docker_buildx_ver }}/{{ docker_buildx_exe }}'
+
+docker_buildx_eff_install_dir: '{{ docker_buildx_parent_install_dir[docker_buildx_persona] }}/cli-plugins'
+docker_buildx_install_fq_exe: '{{ docker_buildx_eff_install_dir }}/{{ docker_buildx_exe }}'
+docker_buildx_install_fq_link: '{{ docker_buildx_eff_install_dir }}/docker-buildx'
+docker_buildx_checksum: '{{ docker_buildx_checksums[docker_buildx_ver][docker_buildx_platform] }}'

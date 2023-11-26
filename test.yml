@@ -1,0 +1,10 @@
+---
+- hosts: all
+  roles:
+    - role: '{{ playbook_dir }}'
+  tasks:
+    - command: docker buildx version
+      register: docker_buildx_test_output
+    - name: docker buildx version
+      debug:
+        msg: '{{ docker_buildx_test_output.stdout }}'
