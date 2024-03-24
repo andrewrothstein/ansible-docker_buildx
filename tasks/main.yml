@@ -1,25 +1,12 @@
 ---
-- name: mkdir {{ docker_buildx_eff_install_dir }}
-  become: true
-  become_user: root
-  file:
-    path: '{{ docker_buildx_eff_install_dir }}'
-    state: directory
-    mode: 0755
-
-- name: downloading {{ docker_buildx_url }} to {{ docker_buildx_install_fq_exe }}
-  become: true
-  become_user: root
-  get_url:
-    url: '{{ docker_buildx_url }}'
-    dest: '{{ docker_buildx_install_fq_exe }}'
-    checksum: '{{ docker_buildx_checksum }}'
-    mode: 0755
-
-- name: linking {{ docker_buildx_install_fq_link }} to {{ docker_buildx_install_fq_exe }}
-  become: true
-  become_user: root
-  file:
-    src: '{{ docker_buildx_install_fq_exe }}'
-    dest: '{{ docker_buildx_install_fq_link }}'
-    state: link
+- name: Deploying plugin
+  ansible.builtin.include_role:
+    name: andrewrothstein.docker_cli_plugin
+  vars:
+    docker_cli_plugin_name: buildx
+    docker_cli_v_dot: true
+    docker_cli_persona: '{{ docker_buildx_persona }}'
+    docker_cli_plugin_ver: '{{ docker_buildx_ver }}'
+    docker_cli_plugin_mirror: '{{ docker_buildx_mirror }}'
+    docker_cli_plugin_arch_map: '{{ docker_buildx_arch_map }}'
+    docker_cli_plugin_checksums: '{{ docker_buildx_checksums }}'

@@ -9,9 +9,6 @@ docker_buildx_arch_map:
   x86_64: amd64
 
 docker_buildx_persona: sys
-docker_buildx_parent_install_dir:
-  usr: '{{ ansible_env.HOME }}/.docker'
-  sys: /usr/local/lib/docker
 
 docker_buildx_checksums:
   '0.12.0':
