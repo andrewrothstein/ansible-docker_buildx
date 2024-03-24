@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-set -e
+set -ex
 DIR=~/Downloads
 MIRROR=https://github.com/docker/buildx/releases/download
 
@@ -32,8 +32,9 @@ dl_ver() {
         curl -sSLf -o $lchecksums "${MIRROR}/v${ver}/checksums.txt"
     fi
 
-    dl $app $lchecksums $ver darwin arm64
-    dl $app $lchecksums $ver darwin amd64
+# unfortunately not in the checksum file! #shakefists
+#    dl $app $lchecksums $ver darwin arm64
+#    dl $app $lchecksums $ver darwin amd64
     dl $app $lchecksums $ver linux amd64
     dl $app $lchecksums $ver linux arm-v6
     dl $app $lchecksums $ver linux arm-v7
@@ -45,4 +46,4 @@ dl_ver() {
     dl $app $lchecksums $ver windows arm64 .exe
 }
 
-dl_ver buildx ${1:-0.12.0}
+dl_ver buildx ${1:-0.13.1}

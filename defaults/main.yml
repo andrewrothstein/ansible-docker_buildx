@@ -1,5 +1,5 @@
 ---
-docker_buildx_ver: 0.12.0
+docker_buildx_ver: 0.13.1
 
 docker_buildx_mirror: https://github.com/docker/buildx/releases/download
 
@@ -30,3 +30,22 @@ docker_buildx_checksums:
     windows-amd64: sha256:dcf01329368381fae8c24b494186a30d2f1c4adb4bef7a0410b4803e5bb1c352
     # https://github.com/docker/buildx/releases/download/v0.12.0/buildx-v0.12.0.windows-arm64.exe
     windows-arm64: sha256:3ace30ecc39b214f80d92c7750c5fc51510ca0eee234aa015d89929c531a22d3
+  '0.13.1':
+    # https://github.com/docker/buildx/releases/download/v0.13.1/buildx-v0.13.1.linux-amd64
+    linux-amd64: sha256:3e2bc8ed25a9125d6aeec07df4e0211edea6288e075b524160ef3fd305d3d74c
+    # https://github.com/docker/buildx/releases/download/v0.13.1/buildx-v0.13.1.linux-arm-v6
+    linux-arm-v6: sha256:643063c656098e312533fe5ee3411523fa06cc3926bd2e96b4c6239b9cecbf88
+    # https://github.com/docker/buildx/releases/download/v0.13.1/buildx-v0.13.1.linux-arm-v7
+    linux-arm-v7: sha256:8d42e7823237e777b121070fda6ad68159539aa6597aedfa7630384643ad6f9a
+    # https://github.com/docker/buildx/releases/download/v0.13.1/buildx-v0.13.1.linux-arm64
+    linux-arm64: sha256:3ba35a5d38361a64b62aeb9d20acc835ff6862a711cb438e610026b29c0ac489
+    # https://github.com/docker/buildx/releases/download/v0.13.1/buildx-v0.13.1.linux-ppc64le
+    linux-ppc64le: sha256:1d16f7b15706d98523889a1ca50e9dfc44bbaec1f736d883a0528805795b9de2
+    # https://github.com/docker/buildx/releases/download/v0.13.1/buildx-v0.13.1.linux-riscv64
+    linux-riscv64: sha256:202221c9b7fb881d092986e8ec2497ee71729f17c4afd912384a086af700e1ad
+    # https://github.com/docker/buildx/releases/download/v0.13.1/buildx-v0.13.1.linux-s390x
+    linux-s390x: sha256:71d7c39192b1b07790eb71e46742cc69a559f3eb00a1512f4a8d2ea1067408da
+    # https://github.com/docker/buildx/releases/download/v0.13.1/buildx-v0.13.1.windows-amd64.exe
+    windows-amd64: sha256:6b113e84cbc3cd645646aa82f00a7f7d3737cc10375b4341e0aca0de0c997c75
+    # https://github.com/docker/buildx/releases/download/v0.13.1/buildx-v0.13.1.windows-arm64.exe
+    windows-arm64: sha256:3b6b93c1798dd6573fc63dac31f1f18ecfda4ee2ba78be147d5e8d090160b8d9
