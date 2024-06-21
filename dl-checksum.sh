@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-set -ex
+set -e
 DIR=~/Downloads
 MIRROR=https://github.com/docker/buildx/releases/download
 
@@ -46,4 +46,4 @@ dl_ver() {
     dl $app $lchecksums $ver windows arm64 .exe
 }
 
-dl_ver buildx ${1:-0.13.1}
+dl_ver buildx ${1:-0.15.1}

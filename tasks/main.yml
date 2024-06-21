@@ -5,7 +5,7 @@
   vars:
     docker_cli_plugin_name: buildx
     docker_cli_plugin_v_dot: true
-    docker_cli_persona: '{{ docker_buildx_persona }}'
+    docker_cli_plugin_persona: '{{ docker_buildx_persona }}'
     docker_cli_plugin_ver: '{{ docker_buildx_ver }}'
     docker_cli_plugin_mirror: '{{ docker_buildx_mirror }}'
     docker_cli_plugin_arch_map: '{{ docker_buildx_arch_map }}'
